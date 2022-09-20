@@ -1,0 +1,16 @@
+{
+  "name": "soa-exam-slide",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.36.5",
+    "@slidev/theme-default": "*"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.25.2"
+  }
+}
