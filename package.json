@@ -4,13 +4,16 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev",
-    "export": "slidev export"
+    "export:light": "slidev export",
+    "export:dark": "slidev export --dark"
   },
   "dependencies": {
     "@slidev/cli": "^0.36.5",
     "@slidev/theme-default": "*"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.33",
+    "@iconify-json/uim": "^1.1.2",
     "playwright-chromium": "^1.25.2"
   }
 }

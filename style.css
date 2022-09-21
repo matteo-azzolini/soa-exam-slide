@@ -1,3 +1,18 @@
+th:nth-child(1),
+td:nth-child(1) {
+  @apply w-50;
+}
+
+th:nth-child(1),
+td:nth-child(2) {
+  @apply w-60;
+}
+
+th:nth-child(3), th:nth-child(4),
+td:nth-child(3), td:nth-child(4) {
+  @apply text-center;
+}
+
 .grid-cols-2 {
   @apply gap-8;
 }

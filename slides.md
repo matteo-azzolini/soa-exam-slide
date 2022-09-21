@@ -73,6 +73,42 @@ layout: center
 </v-click>
 
 ---
+
+## Ristoranti
+
+| Metodo                                          | Url               | Owner     | Customer  |
+| ----------------------------------------------- | ----------------- | --------- | --------- |
+| <span class="text-sky-500">**GET**</span>       | /restaurants      | <Allow /> | <Allow /> |
+| <span class="text-sky-500">**GET**</span>       | /restaurants/:id  | <Allow /> | <Allow /> |
+| <span class="text-emerald-500">**POST**</span>  | /restaurants      | <Allow /> | <Deny />  |
+| <span class="text-amber-500">**PUT**</span>     | /restaurants/:id  | <Allow /> | <Deny />  |
+| <span class="text-rose-500">**DELETE**</span>   | /restaurants/:id  | <Allow /> | <Deny />  |
+
+---
+
+## Piatti
+
+| Metodo                                          | Url                 | Owner     | Customer  |
+| ----------------------------------------------- | ------------------- | --------- | --------- |
+| <span class="text-sky-500">**GET**</span>       | /meals?restaurantId | <Allow /> | <Allow /> |
+| <span class="text-sky-500">**GET**</span>       | /meals/:id          | <Allow /> | <Allow /> |
+| <span class="text-emerald-500">**POST**</span>  | /meals              | <Allow /> | <Deny />  |
+| <span class="text-amber-500">**PUT**</span>     | /meals/:id          | <Allow /> | <Deny />  |
+| <span class="text-rose-500">**DELETE**</span>   | /meals/:id          | <Allow /> | <Deny />  |
+
+---
+
+## Ordini
+
+| Metodo                                          | Url                  | Owner     | Customer  |
+| ----------------------------------------------- | -------------------- | --------- | --------- |
+| <span class="text-sky-500">**GET**</span>       | /orders?restaurantId | <Allow /> | <Deny />  |
+| <span class="text-sky-500">**GET**</span>       | /orders?customerId   | <Deny />  | <Allow /> |
+| <span class="text-sky-500">**GET**</span>       | /orders/:id          | <Allow /> | <Allow /> |
+| <span class="text-emerald-500">**POST**</span>  | /orders              | <Deny />  | <Allow /> |
+
+<!-- TO DELETE START -->
+---
 layout: two-cols
 ---
 
@@ -109,6 +145,7 @@ layout: two-cols
 | **POST**    | /orders      |
 | **PUT**     | /orders/:id  |
 | **DELETE**  | /orders/:id  |
+<!-- TO DELETE END -->
 
 ---
 layout: two-cols-header
@@ -345,39 +382,6 @@ function updateUser(id: number, update: User) {
   display: none;
 }
 </style>
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
 
 ---
 class: px-20
