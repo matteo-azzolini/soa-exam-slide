@@ -32,7 +32,7 @@ class: text-center
 
 # Foo<span class="text-sky-500">dev</span>
 
-Architetture Orientate ai Servizi - 23/09/2022
+Architetture Orientate ai Servizi - 2022
 
 Matteo Azzolini
 </div>
@@ -74,6 +74,8 @@ layout: center
 
 ---
 
+<Header>Api design / Resources</Header>
+
 ## Ristoranti
 
 | Metodo                                          | Url               | Owner     | Customer  |
@@ -85,6 +87,8 @@ layout: center
 | <span class="text-rose-500">**DELETE**</span>   | /restaurants/:id  | <Allow /> | <Deny />  |
 
 ---
+
+<Header>Api design / Resources</Header>
 
 ## Piatti
 
@@ -98,6 +102,8 @@ layout: center
 
 ---
 
+<Header>Api design / Resources</Header>
+
 ## Ordini
 
 | Metodo                                          | Url                  | Owner     | Customer  |
@@ -106,46 +112,6 @@ layout: center
 | <span class="text-sky-500">**GET**</span>       | /orders?customerId   | <Deny />  | <Allow /> |
 | <span class="text-sky-500">**GET**</span>       | /orders/:id          | <Allow /> | <Allow /> |
 | <span class="text-emerald-500">**POST**</span>  | /orders              | <Deny />  | <Allow /> |
-
-<!-- TO DELETE START -->
----
-layout: two-cols
----
-
-## Ristoranti
-
-| Metodo      | Url               |
-| ----------- | ----------------- |
-| <span class="text-sky-500">**GET**</span>     | /restaurants      |
-| <span class="text-sky-500">**GET**</span>    | /restaurants/:id  |
-| <span class="text-emerald-500">**POST**</span>    | /restaurants      |
-| <span class="text-amber-500">**PUT**</span>     | /restaurants/:id  |
-| <span class="text-rose-500">**DELETE**</span>  | /restaurants/:id  |
-
-::right::
-
-## Piatti
-
-| Metodo      | Url         |
-| ----------- | ----------- |
-| **GET**     | /meals      |
-| **GET**     | /meals/:id  |
-| **POST**    | /meals      |
-| **PUT**     | /meals/:id  |
-| **DELETE**  | /meals/:id  |
-
----
-
-# Ordini
-
-| Metodo      | Url          |
-| ----------- | ------------ |
-| **GET**     | /orders      |
-| **GET**     | /orders/:id  |
-| **POST**    | /orders      |
-| **PUT**     | /orders/:id  |
-| **DELETE**  | /orders/:id  |
-<!-- TO DELETE END -->
 
 ---
 layout: two-cols-header
