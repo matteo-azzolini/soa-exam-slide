@@ -1,6 +1,8 @@
 # soa-exam-slide
 
-Presentation slides written with [slidev](https://github.com/slidevjs/slidev) for Service-Oriented Architectures exam
+Presentation slides for Service-Oriented Architectures exam
+
+Written with [slidev](https://github.com/slidevjs/slidev)
 
 To start the slide presentation run:
 ```
