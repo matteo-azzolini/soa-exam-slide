@@ -4,7 +4,7 @@ Presentation slides for Service-Oriented Architectures exam
 
 Written with [slidev](https://github.com/slidevjs/slidev)
 
-# Run
+## Run
 
 Install dependencies:
 ```

@@ -256,8 +256,7 @@ sequenceDiagram
 
 | Metodo      | Url                  | Owner     | Customer  |
 | ----------- | -------------------- | --------- | --------- |
-| <Get />     | /orders?restaurantId | <Allow /> | <Deny />  |
-| <Get />     | /orders?customerId   | <Deny />  | <Allow /> |
+| <Get />     | /orders              | <Allow /> | <Allow /> |
 | <Get />     | /orders/:id          | <Allow /> | <Allow /> |
 | <Post />    | /orders              | <Deny />  | <Allow /> |
 
