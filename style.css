@@ -16,3 +16,11 @@ td:nth-child(3), td:nth-child(4) {
 .grid-cols-2 {
   @apply gap-8;
 }
+
+sky {
+  @apply not-italic text-sky-500 font-semibold;
+}
+
+mono {
+  @apply font-mono;
+}

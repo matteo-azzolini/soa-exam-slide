@@ -48,46 +48,76 @@ Matteo Azzolini
 
 ---
 
-## Foodev
+## Introduzione
 
-<br>
+La presentazione è composta da **tre parti**:
 
-Una semplice Rest Api che permette di ordinare cibo da casa dal proprio ristorante preferito
+1. Requisiti
 
-<br>
+2. Progettazione API
+    - Risorse
+    - Autenticazione
+    - Esempio di chiamata
 
-Deve permettere ai proprietari di ristoranti di inserire il proprio ristorante insieme a un menu
+3. Implementazione
+    - koa js
+    - jest
 
-Deve permettere ai clienti di effettuare ordini in un particolare ristorante, selezionando i piatti desiderati
+---
 
-<br>
+## Codice
 
-### Codice
-
-Il codice sorgente è consultabile su github: 
+Il codice sorgente è consultabile su **github**: 
 
 https://github.com/matteo-azzolini/soa-exam-koa
 
 https://github.com/matteo-azzolini/soa-exam-slide
 
 ---
+layout: center
+---
 
-## Intro
+# Requisiti
 
-La presentazione è composta da due parti:
-- Api design
-  - Risorse
-  - Autenticazione
-  - Esempio di chiamata
-- Implementazione
-  - koa js
-  - jest
+---
+
+<Header>Requisiti</Header>
+
+## Foodev
+
+<br>
+
+Foodev è una semplice **rest Api** che permette di ordinare da casa dal proprio ristorante preferito
+
+<br>
+
+***
+
+<br>
+
+Deve gestire **due tipologie** di utenti:
+- i proprietari - <sky>owner</sky> - possono inserire e modificare il proprio ristorante e il menu
+- i clienti - <sky>customer</sky> - possono effettuare ordini in un particolare ristorante selezionando i piatti desiderati
+
+---
+
+<Header>Requisiti</Header>
+
+## Accesso alle risorse
+
+<br>
+
+È necessario possedere un'utenza valida e **autenticarsi** per poter richiamare le api.
+
+Un'utente può modificare solo le **proprie** risorse
+
+<small>(e.g. un proprietario può modificare solo un ristorante in suo possesso\, un cliente non può modificare ristoranti)</small>
 
 ---
 layout: center
 ---
 
-# Api design
+# Progettazione API
 
 ---
 layout: image-right
@@ -96,7 +126,7 @@ image: https://source.unsplash.com/collection/4625880/1920x1080
 
 <Header>Api design</Header>
 
-### Risorse
+## Risorse
 
 - utenti
   - 🧑🏻‍🍳 proprietari
@@ -113,13 +143,13 @@ image: https://source.unsplash.com/collection/4625880/1920x1080
 
 <br>
 
-È possibile **registrare** un utente tramite una chiamata all'endpoint <Mono>/register</Mono>
+È possibile <sky>registrare</sky> un utente tramite una chiamata all'endpoint <mono>/register</mono>
 
 <br>
 
 #### <Post /> /register
 
-<div class="w-80">
+<div class="w-1/2">
 ```json
 {
   "username": "xxx",
@@ -131,24 +161,24 @@ image: https://source.unsplash.com/collection/4625880/1920x1080
 
 <br>
 
-L'utente viene salvato insieme alla sua password ( *hash + salt* ) e al suo ruolo
+L'utente viene salvato insieme alla sua **password** ( *hash + salt* ) e al suo **ruolo**
 
 ---
 
 <Header>Api design / AUTH</Header>
 
-## Autenticazione
+## Login
 
 <br>
 
-È possibile **autenticarsi** alle api tramite una chiamata all'endpoint <Mono>/login</Mono>\
-Tramite **Basic authentication** (username:password)
+È possibile ottenere un <sky>token di accesso</sky> alle api tramite una chiamata all'endpoint <mono>/login</mono>\
+con **Basic authentication** (username:password)
 
 <br>
 
 <div class="flex space-x-6">
 
-<div class="grow">
+<div class="w-1/2">
 
 #### <Post /> /login
 
@@ -160,13 +190,13 @@ Tramite **Basic authentication** (username:password)
 ```
 </div>
 
-<div class="w-auto">
+<div class="w-1/2">
 
 #### 202 Accepted
 
 ```json
 {
-  "accessToken": "/header/./data/./verify-signature/",
+  "accessToken": "JWT /header/./data/./signature/"
 }
 ```
 </div>
@@ -175,21 +205,64 @@ Tramite **Basic authentication** (username:password)
 
 <br>
 
-In caso la login abbia successo viene ritornato all'utente un **access_token** in formato **JWT**
+In caso la login abbia successo viene ritornato all'utente un **access_token**, in formato **JWT**, che sarà utilizzato per effettuare le successive richieste
 
 ---
+
+<Header>Api design / AUTH</Header>
+
+## Autenticazione
+
+<br>
+
+È possibile <sky>autenticarsi</sky> in ogni chiamata all'api inserendo l'access_token JWT all'interno del HTTP request header <mono>Authorization</mono>
+
+<div class="w-1/2">
+
+```
+GET /restaurants
+Authorization: Bearer $access_token_jwt
+```
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<Header>Api design / AUTH</Header>
 
 ## Autorizzazione
 
 <br>
 
-JWT - JSON Web Token - è un formato che..
+::left::
 
-..permette di gestire il controllo degli accessi alle Risorse
+<sky>JWT</sky> - JSON Web Token - è un token di accesso standardizzato che consente lo scambio sicuro di dati tra due parti
 
-eg.\
-un proprietario può modificare solo un ristorante in suo possesso\
-un cliente non può modificare ristoranti
+Permette di gestire il **controllo degli accessi** alle risorse senza dover gestire sessioni e scaricando l'onere al client
+
+In slidev il JWT generato contiene l'**id** e il **ruolo** dell'utente, da cui si può determinare se l'utente <sky>ha accesso</sky> a una determinata risorsa
+
+::right::
+
+##### Esempio JWT in slidev
+
+```json
+// HEADER
+{ 
+  ..
+}
+// DATA
+{ 
+  "id": "123",
+  "role": "OWNER"
+}
+// SIGNATURE
+{ 
+
+}
+```
 
 ---
 
@@ -226,13 +299,17 @@ sequenceDiagram
 
 ## Ristoranti
 
-| Metodo      | Url               | Owner     | Customer  |
-| ----------- | ----------------- | --------- | --------- |
-| <Get />     | /restaurants      | <Allow /> | <Allow /> |
-| <Get />     | /restaurants/:id  | <Allow /> | <Allow /> |
-| <Post />    | /restaurants      | <Allow /> | <Deny />  |
-| <Put />     | /restaurants/:id  | <Allow /> | <Deny />  |
-| <Delete />  | /restaurants/:id  | <Allow /> | <Deny />  |
+| Metodo      | Url               | Owner              | Customer  |
+| ----------- | ----------------- | ------------------ | --------- |
+| <Get />     | /restaurants      | <Allow />          | <Allow /> |
+| <Get />     | /restaurants/:id  | <Allow />          | <Allow /> |
+| <Post />    | /restaurants      | <Allow />          | <Deny />  |
+| <Put />     | /restaurants/:id  | <Allow note="1" /> | <Deny />  |
+| <Delete />  | /restaurants/:id  | <Allow note="1" /> | <Deny />  |
+
+<div class="absolute bottom-6 right-6">
+  <small class="font-base">1 - solo se proprietario del ristorante</small>
+</div>
 
 ---
 
@@ -254,11 +331,17 @@ sequenceDiagram
 
 ## Ordini
 
-| Metodo      | Url                  | Owner     | Customer  |
-| ----------- | -------------------- | --------- | --------- |
-| <Get />     | /orders              | <Allow /> | <Allow /> |
-| <Get />     | /orders/:id          | <Allow /> | <Allow /> |
-| <Post />    | /orders              | <Deny />  | <Allow /> |
+| Metodo      | Url                  | Owner              | Customer           |
+| ----------- | -------------------- | ------------------ | ------------------ |
+| <Get />     | /orders              | <Allow note="1" /> | <Allow note="2" /> |
+| <Get />     | /orders/:id          | <Allow note="1" /> | <Allow note="2" /> |
+| <Post />    | /orders              | <Deny />           | <Allow />          |
+
+<div class="absolute bottom-6 right-6">
+  <small class="font-base">1 - ordini dei propri ristoranti</small>
+  <br>
+  <small class="font-base">2 - ordini effettuati dal cliente</small>
+</div>
 
 ---
 layout: two-cols
