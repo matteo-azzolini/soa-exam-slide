@@ -7,9 +7,11 @@ image: https://source.unsplash.com/collection/4625880/1920x1080
 
 ## Risorse
 
-- utenti
+<br>
+
+- 👤 utenti
   - 🧑🏻‍🍳 proprietari
-  - clienti
+  - 👨‍👩‍👧‍👦 clienti
 - 🍽 ristoranti
 - 🍜 piatti
 - 📋 ordini

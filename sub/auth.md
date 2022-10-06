@@ -4,6 +4,8 @@
 
 <br>
 
+Per chiamare le API è necessario possedere un'utenza e un relativo access_token
+
 È possibile <sky>registrare</sky> un utente tramite una chiamata all'endpoint <mono>/register</mono>
 
 <br>
@@ -32,7 +34,7 @@ L'utente viene salvato insieme alla sua **password** ( *hash + salt* ) e al suo 
 
 <br>
 
-È possibile ottenere un <sky>token di accesso</sky> alle api tramite una chiamata all'endpoint <mono>/login</mono>\
+È possibile ottenere un <sky>access_token</sky> alle API tramite una chiamata all'endpoint <mono>/login</mono>\
 con **Basic authentication** (username:password)
 
 <br>
@@ -66,7 +68,7 @@ con **Basic authentication** (username:password)
 
 <br>
 
-In caso la login abbia successo viene ritornato all'utente un **access_token**, in formato **JWT**, che sarà utilizzato per effettuare le successive richieste
+In caso la login abbia successo viene restituito all'utente un **access_token**, in formato **JWT**, che sarà utilizzato per effettuare le successive richieste
 
 ---
 
@@ -76,7 +78,7 @@ In caso la login abbia successo viene ritornato all'utente un **access_token**, 
 
 <br>
 
-È possibile <sky>autenticarsi</sky> in ogni chiamata all'api inserendo l'access_token JWT all'interno del HTTP request header <mono>Authorization</mono>
+È possibile <sky>autenticarsi</sky> in ogni chiamata all'API inserendo l'access_token JWT all'interno dell'HTTP request header <mono>Authorization</mono>
 
 <div class="w-1/2">
 
@@ -99,15 +101,17 @@ layout: two-cols-header
 
 ::left::
 
-<sky>JWT</sky> - JSON Web Token - è un token di accesso standardizzato che consente lo scambio sicuro di dati tra due parti
+<sky>JWT</sky> - JSON Web Token - è un token di accesso standardizzato che consente lo scambio sicuro di dati tra due parti.
 
-Permette di gestire il **controllo degli accessi** alle risorse senza dover gestire sessioni e scaricando l'onere al client
+<!-- TODO sinonimo gestire -->
 
-In slidev il JWT generato contiene l'**id** e il **ruolo** dell'utente, da cui si può determinare se l'utente <sky>ha accesso</sky> a una determinata risorsa
+Permette di gestire il **controllo degli accessi** alle risorse senza che il server debba occuparsi delle sessioni ma delegando il compito al client.
+
+In foodev il JWT generato contiene l'**id** e il **ruolo** dell'utente, da cui si può determinare se l'utente <sky>ha accesso</sky> a una determinata risorsa.
 
 ::right::
 
-##### Esempio JWT in slidev
+##### Esempio JWT in foodev
 
 ```json
 // HEADER
@@ -124,32 +128,3 @@ In slidev il JWT generato contiene l'**id** e il **ruolo** dell'utente, da cui s
 
 }
 ```
-
----
-
-TODO non estrae!
-
-```mermaid
-sequenceDiagram
-  participant C as Client
-  participant S as Server
-  C->>+S: POST /restaurants
-  S-->>-C: 401 Unauthorized
-  C->>+S: POST /login | username:password
-  S-->>-C: 202 Accepted | accessToken
-  C->>+S: GET /restaurants
-  S-->>-C: 401 Unauthorized
-  Note over C,S: A typical interaction
-```
-
-<v-click>
-
-## Risorse
-
-<br>
-
-- Ristoranti
-- Piatti
-- Ordini
-
-</v-click>

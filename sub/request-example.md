@@ -4,7 +4,7 @@ layout: two-cols
 
 <Header>Api design / Request example</Header>
 
-# Sequence diagram
+## Sequence diagram
 
 ::right::
 
@@ -12,13 +12,14 @@ layout: two-cols
 sequenceDiagram
   participant C as Client
   participant S as Server
-  C->>+S: POST /restaurants
-  S-->>-C: 401 Unauthorized
-  C->>+S: POST /login | username:password
-  S-->>-C: 202 Accepted | accessToken
   C->>+S: GET /restaurants
   S-->>-C: 401 Unauthorized
-  Note over C,S: A typical interaction
+  C->>+S: POST /login
+  Note over C: payload: {username:password}
+  S-->>-C: 202 Accepted | accessToken
+  C->>+S: GET /restaurants
+  Note over C: Authorization: Bearer $jwt
+  S-->>-C: 200 [ ... ]
 ```
 
 ---

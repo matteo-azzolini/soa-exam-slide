@@ -83,6 +83,8 @@ layout: center
 # Tech stack
 
 - koa js
+  - koa routes
+  - koa logger
 
 ---
 
