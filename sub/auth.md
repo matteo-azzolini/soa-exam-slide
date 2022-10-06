@@ -1,4 +1,4 @@
-<Header>Api design / AUTH</Header>
+<Header>Progettazione Api / AUTH</Header>
 
 ## Registrazione utente
 
@@ -28,7 +28,7 @@ L'utente viene salvato insieme alla sua **password** ( *hash + salt* ) e al suo 
 
 ---
 
-<Header>Api design / AUTH</Header>
+<Header>Progettazione Api / AUTH</Header>
 
 ## Login
 
@@ -72,7 +72,7 @@ In caso la login abbia successo viene restituito all'utente un **access_token**,
 
 ---
 
-<Header>Api design / AUTH</Header>
+<Header>Progettazione Api / AUTH</Header>
 
 ## Autenticazione
 
@@ -89,29 +89,30 @@ Authorization: Bearer $access_token_jwt
 
 </div>
 
+Il token ha una **validità** di un'ora e dovrà essere richiesto al termine di essa
+
 ---
 layout: two-cols-header
 ---
 
-<Header>Api design / AUTH</Header>
+<Header>Progettazione Api / AUTH</Header>
 
 ## Autorizzazione
 
+<br>
 <br>
 
 ::left::
 
 <sky>JWT</sky> - JSON Web Token - è un token di accesso standardizzato che consente lo scambio sicuro di dati tra due parti.
 
-<!-- TODO sinonimo gestire -->
-
 Permette di gestire il **controllo degli accessi** alle risorse senza che il server debba occuparsi delle sessioni ma delegando il compito al client.
 
-In foodev il JWT generato contiene l'**id** e il **ruolo** dell'utente, da cui si può determinare se l'utente <sky>ha accesso</sky> a una determinata risorsa.
+In foodev il JWT generato contiene l'**id** e il **ruolo** dell'utente, da cui si può determinare se l'utente **ha accesso** a una determinata risorsa.
 
 ::right::
 
-##### Esempio JWT in foodev
+##### Esempio JWT in foodev:
 
 ```json
 // HEADER
@@ -125,6 +126,6 @@ In foodev il JWT generato contiene l'**id** e il **ruolo** dell'utente, da cui s
 }
 // SIGNATURE
 { 
-
+  ..
 }
 ```

@@ -3,7 +3,7 @@ layout: image-right
 image: https://source.unsplash.com/collection/4625880/1920x1080
 ---
 
-<Header>Api design</Header>
+<Header>Progettazione Api / Risorse</Header>
 
 ## Risorse
 
@@ -18,7 +18,7 @@ image: https://source.unsplash.com/collection/4625880/1920x1080
 
 ---
 
-<Header>Api design / Resources</Header>
+<Header>Progettazione Api / Risorse</Header>
 
 ## Ristoranti
 
@@ -36,7 +36,7 @@ image: https://source.unsplash.com/collection/4625880/1920x1080
 
 ---
 
-<Header>Api design / Resources</Header>
+<Header>Progettazione Api / Risorse</Header>
 
 ## Piatti
 
@@ -54,7 +54,7 @@ image: https://source.unsplash.com/collection/4625880/1920x1080
 
 ---
 
-<Header>Api design / Resources</Header>
+<Header>Progettazione Api / Risorse</Header>
 
 ## Ordini
 

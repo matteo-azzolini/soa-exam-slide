@@ -6,7 +6,7 @@ La presentazione è composta da **tre parti**:
 
 2. **Progettazione API**
     - Risorse
-    - Autenticazione
+    - Autenticazione e autorizzazione
     - Esempio di chiamata
 
 3. **Implementazione**
