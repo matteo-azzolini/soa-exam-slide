@@ -79,38 +79,8 @@ layout: center
 # Implementazione
 
 ---
-
-# Tech stack
-
-- koa js
-  - koa routes
-  - koa logger
-
+src: ./sub/implementation.md
 ---
-
-# App.js
-
-```typescript {all|1-2|4-7|8-11}
-const app = new koa();
-const router = new koaRouter();
-
-app
-  .use(logger())
-  .use(router.routes())
-  .use(router.allowedMethods());
-
-router.get('/restaurants',      getRestaurants);
-router.get('/restaurants/:id',  getRestaurants);
-router.post('/restaurants',     createRestaurant(request));
-
-const options = {
-  key: fs.readFileSync('cert/key.pem'),
-  cert: fs.readFileSync('cert/cert.pem')
-};
-
-http.createServer(app.callback()).listen(80);
-https.createServer(options, app.callback()).listen(443);
-```
 
 ---
 layout: center
