@@ -1,16 +1,3 @@
-<Header>Implementazione</Header>
-
-## Tech stack
-
-<br>
-
-<!-- TODO lista -->
-- koa js
-  - koa routes
-  - koa logger
-
----
-
 <Header>Implementazione / Koa</Header>
 
 ## Koa js
@@ -28,7 +15,7 @@ Supporto alle ultime versioni javascript
 
 <br>
 
-> Middleware utilizzati in slidev:
+> Middleware utilizzati in foodev:
 > - koa-router
 > - koa-logger
 > - koa-bodyparser
@@ -101,7 +88,26 @@ function create(ctx, next) {
 
 ## Jest
 
-<!-- TODO descrizione framework -->
+<br>
+
+<div class="flex">
+  <div class="w-4xl">
+Framework javascript per scrivere test
+
+Efficace per **TDD** - Test Driven Development - grazie alla modalità <mono>watch</mono>
+
+<br>
+
+> In Foodev utilizzato per verificare gli endpoint esposti:
+> - /auth
+> - /restaurants
+> - /meals
+> - /orders
+  </div>
+  <div class="relative -right-6">
+    <img src="/images/jest-logo.jpeg" />
+  </div>
+</div>
 
 ---
 
@@ -158,14 +164,9 @@ it('Should return 403', async () => {
 
 <br>
 
-```shell
-PASS  tests/auth.spec.js
-  /register
-    ✓ POST        - should return 201 (59 ms)
-    ✓ POST        - should return 400 (51 ms)
-  /login
-    ✓ POST        - should return 201 (50 ms)
-    ✓ POST        - should return 401 (49 ms)
+```
+...
+
 PASS  tests/restaurants.spec.js
   /restaurants OWNER
     ✓ GET ALL     - should return 200 (3 ms)
@@ -180,5 +181,6 @@ PASS  tests/restaurants.spec.js
     ✓ PUT/123     - should return 403 (1 ms)
     ✓ DELETE/123  - should return 403 (1 ms)
 
+...
 ```
 
