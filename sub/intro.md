@@ -14,6 +14,9 @@ La presentazione è composta da **tre parti**:
     - jest
 
 ---
+layout: image-right
+image: /images/github.jpg
+---
 
 ## Codice
 

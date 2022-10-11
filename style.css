@@ -24,3 +24,7 @@ sky {
 mono {
   @apply font-mono;
 }
+
+a {
+  @apply whitespace-nowrap;
+}

@@ -3,14 +3,7 @@
 theme: default
 title: Foodev
 titleTemplate: '%s - SOA'
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-# https://unsplash.com/collections/3JDsDM8qmaI/slidev
-# https://unsplash.com/collections/7pU-FOuzi98/%E5%B9%BB
-#
-# background: https://source.unsplash.com/collection/3JDsDM8qmaI/1920x1080
-background: https://source.unsplash.com/collection/4625880/1920x1080
-
+background: /images/cover.jpeg
 highlighter: shiki
 # show line numbers in code blocks
 lineNumbers: false
@@ -22,13 +15,11 @@ drawings:
 css: unocss
 #
 layout: cover
-# image: 'https://source.unsplash.com/collection/94734566/1920x1080'
 # apply any windi css classes to the current slide
 class: text-center
 ---
 
 <div class="bg-black w-full right-0 absolute bg-opacity-40 shadow-lg">
-<!-- <h1>Foo<span class="text-sky-500">dev</span></h1> -->
 
 # Foo<span class="text-sky-500">dev</span>
 
@@ -36,15 +27,6 @@ Architetture Orientate ai Servizi - 2022
 
 Matteo Azzolini
 </div>
-
-<!-- <style>
-.cover {
-  @apply bg-opacity-100;
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 50%;
-}
-</style> -->
 
 ---
 src: ./sub/intro.md
