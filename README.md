@@ -1,12 +1,8 @@
 # soa-exam-slidev
 
-Presentation slides for Service-Oriented Architectures exam
+Presentation slides for Service-Oriented Architectures exam written with [slidev](https://github.com/slidevjs/slidev)
 
-Written with [slidev](https://github.com/slidevjs/slidev)
-
-<form action="https://soa-exam-slidev.vercel.app">
-  <input type="submit" value="Watch live" />
-</form>
+[Watch live](https://soa-exam-slidev.vercel.app)
 
 ## Run
 

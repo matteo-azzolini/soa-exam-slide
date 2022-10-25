@@ -28,3 +28,22 @@ mono {
 a {
   @apply whitespace-nowrap;
 }
+
+kbd {
+  @apply bg-neutral-50 dark:bg-neutral-800 mx-1;
+  @apply relative -top-[2px];
+
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+  --tw-border-opacity: .2;
+  --tw-bg-opacity: 1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 10px !important;
+  border-bottom-width: 2px;
+  min-height: 2.2em;
+  min-width: 2.2em;
+}

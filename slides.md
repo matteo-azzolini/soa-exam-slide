@@ -3,7 +3,7 @@
 theme: default
 title: Foodev
 titleTemplate: '%s - SOA'
-background: /images/cover.jpeg
+colorSchema: auto
 highlighter: shiki
 # show line numbers in code blocks
 lineNumbers: false
@@ -13,27 +13,28 @@ drawings:
   persist: false
 # use UnoCSS (experimental)
 css: unocss
-#
-layout: cover
-# apply any windi css classes to the current slide
-class: text-center
+layout: default
 ---
+## Navigation
 
-<div class="bg-black w-full right-0 absolute bg-opacity-40 shadow-lg">
+Press <kbd>d</kbd> to switch light/dark mode.
 
-# Foo<span class="text-sky-500">dev</span>
+Press <kbd>o</kbd> to toggle slides overview.
 
-Architetture Orientate ai Servizi - 2022
+Press <kbd>▶</kbd> / <kbd>space</kbd> next animation or slide.
 
-Matteo Azzolini
-</div>
+Press <kbd>◀︎</kbd> previous animation or slide.
 
 ---
-src: ./sub/intro.md
+src: ./slides/1. cover.md
 ---
 
 ---
-src: ./sub/requirements.md
+src: ./slides/2. intro.md
+---
+
+---
+src: ./slides/3. requirements.md
 ---
 
 ---
@@ -43,15 +44,15 @@ layout: center
 # Progettazione API
 
 ---
-src: ./sub/resources.md
+src: ./slides/4. resources.md
 ---
 
 ---
-src: ./sub/auth.md
+src: ./slides/5. auth.md
 ---
 
 ---
-src: ./sub/request-example.md
+src: ./slides/6. request-example.md
 ---
 
 ---
@@ -61,7 +62,7 @@ layout: center
 # Implementazione
 
 ---
-src: ./sub/implementation.md
+src: ./slides/7. implementation.md
 ---
 
 ---

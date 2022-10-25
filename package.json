@@ -4,6 +4,7 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev",
+    "preview": "npm run build && npx vite preview",
     "export:light": "slidev export",
     "export:dark": "slidev export --dark"
   },
