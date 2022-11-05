@@ -1,23 +1,17 @@
 ---
-# try also 'default' to start simple
+# https://github.com/slidevjs/slidev/blob/main/packages/types/src/config.ts
 theme: default
 title: Foodev
 titleTemplate: '%s - SOA'
-colorSchema: auto
+colorSchema: dark
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: false
-# some information about the slides, markdown enabled
-# persist drawings in exports and build
 drawings:
   persist: false
-# use UnoCSS (experimental)
 css: unocss
 layout: default
 ---
 ## Navigation
-
-Press <kbd>d</kbd> to switch light/dark mode.
 
 Press <kbd>o</kbd> to toggle slides overview.
 
