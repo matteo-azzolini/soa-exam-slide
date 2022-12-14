@@ -1,5 +1,5 @@
 {
-  "name": "soa-exam-slide",
+  "name": "soa-exam-slidev",
   "private": true,
   "scripts": {
     "build": "slidev build",
@@ -9,12 +9,7 @@
     "export:dark": "slidev export --dark"
   },
   "dependencies": {
-    "@slidev/cli": "^0.37.1",
+    "@slidev/cli": "^0.38.0",
     "@slidev/theme-default": "*"
-  },
-  "devDependencies": {
-    "@iconify-json/mdi": "^1.1.33",
-    "@iconify-json/uim": "^1.1.2",
-    "playwright-chromium": "^1.25.2"
   }
 }
