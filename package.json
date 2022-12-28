@@ -9,7 +9,7 @@
     "export:dark": "slidev export --dark"
   },
   "dependencies": {
-    "@slidev/cli": "^0.38.0",
+    "@slidev/cli": "^0.38.2",
     "@slidev/theme-default": "*"
   }
 }
