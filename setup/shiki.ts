@@ -4,7 +4,6 @@ import { defineShikiSetup } from '@slidev/types'
 export default defineShikiSetup(() => {
   return {
     theme: {
-      // dark: 'one-dark-pro',
       dark: 'dark-plus',
       light: 'light-plus',
     },

@@ -10,6 +10,7 @@ drawings:
   persist: false
 css: unocss
 layout: default
+transition: slide-left
 ---
 ## Navigation
 
